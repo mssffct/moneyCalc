@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Кошелек JS</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
 </head>
 
 <body>
@@ -36,17 +38,73 @@
                         </p>
                     </div>
                 </div>
+                <div class="total__main">
+                    <div class="total__main-item total__daily">
+                        <div class="form-group">
+                            <label for="dailyLimit"><h4>Дневной лимит</h4></label>
+                            <select class="form-control" id="dailyLimit">
+                                <option>300</option>
+                                <option>400</option>
+                                <option>500</option>
+                                <option>600</option>
+                                <option>700</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="total__main-item total__dailysum">
+                        <h4>Потрачено сегодня</h4>
+                        <p class="total__money total__money-dailysum">
+                            -0 ₽
+                        </p>
+                    </div>
+                </div>
             </section>
 
             <section class="operation">
                 <h3>Новая операция</h3>
                 <form id="form">
-                    <label>
-                        <input type="text" class="operation__fields operation__name" placeholder="Наименование операции">
-                    </label>
-                    <label>
-                        <input type="number" class="operation__fields operation__amount" placeholder="Введите сумму">
-                    </label>
+                    <div class="row">
+                        <div class="col-sm-8"><input type="date" class="operation__fields operation__date" name="date"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <select class="form-control operation__fields operation__name" id="addOperationName">
+                                <option>Зарплата</option>
+                                <option>Кварплата</option>
+                                <option>Магазин</option>
+                                <option>Кафе</option>
+                                <option>Другие траты</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6">
+                            <label>
+                                <input type="number" class="operation__fields operation__amount" placeholder="Введите сумму">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label>
+                                <input type="input" class="operation__fields operation__descr" placeholder="Примечание">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <button type="button" class="btn btn-danger operation__fields">Расход</button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button type="button" class="btn btn-success operation__fields">Доход</button>
+                        </div>
+                    </div>
+                    
+                    <!-- 
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Example select</label>
+                        
+                    </div>
+                    
+                    -->
                     <button type="submit" class="operation__add">Добавить операцию</button>
                 </form>
             </section>
